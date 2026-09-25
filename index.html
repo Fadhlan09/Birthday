@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Birthday 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background Animation -->
+    <div class="stars"></div>
+
+    <div class="balloon balloon-1">🎈</div>
+    <div class="balloon balloon-2">🎈</div>
+    <div class="balloon balloon-3">🎈</div>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <div class="birthday-card">
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <p class="small-title">TODAY IS MY SPECIAL DAY</p>
+
+            <h1>
+                It's My<br>
+                <span>Birthday!</span>
+            </h1>
+
+            <p class="description">
+                Hari ini adalah hari spesial buatku.
+                Terima kasih sudah datang dan ikut
+                merayakan hari ulang tahunku. ❤️
+            </p>
+
+            <button class="btn" onclick="openForm()">
+                💌 Tulis Ucapan
+            </button>
+
+            <div class="mini-text">
+                Buat satu ucapan untukku ✨
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Form Ucapan -->
+    <div class="modal" id="messageModal">
+
+        <div class="form-card">
+
+            <button class="close-btn" onclick="closeForm()">
+                ×
+            </button>
+
+            <div class="form-icon">
+                💌
+            </div>
+
+            <h2>Tulis Ucapan</h2>
+
+            <p>
+                Tinggalkan pesan kecil untuk hari spesialku ❤️
+            </p>
+
+            <form id="birthdayForm">
+
+                <div class="input-group">
+
+                    <label for="nama">
+                        Nama
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Masukkan nama kamu"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="ucapan">
+                        Ucapan
+                    </label>
+
+                    <textarea
+                        id="ucapan"
+                        name="ucapan"
+                        placeholder="Tulis ucapan ulang tahun..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="send-btn"
+                    id="sendButton"
+                >
+                    Kirim Ucapan ❤️
+                </button>
+
+            </form>
+
+            <div
+                class="success-message"
+                id="successMessage"
+            >
+                🎉 Ucapan berhasil dikirim!
+                <br>
+                <span>Terima kasih sudah ikut merayakan ❤️</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

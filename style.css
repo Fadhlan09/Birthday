@@ -1,0 +1,562 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at top left, #ff8fb1, transparent 35%),
+        radial-gradient(circle at bottom right, #7b61ff, transparent 35%),
+        linear-gradient(135deg, #17102d, #28154d, #121026);
+
+    color: white;
+}
+
+
+/* Background */
+
+.stars {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px);
+
+    background-size: 60px 60px;
+
+    opacity: 0.25;
+
+    animation: moveStars 20s linear infinite;
+}
+
+@keyframes moveStars {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(60px);
+    }
+
+}
+
+
+/* Container */
+
+.container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+/* Birthday Card */
+
+.birthday-card {
+
+    width: min(500px, 100%);
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.35);
+
+    animation: cardAppear 1s ease;
+
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* Cake */
+
+.cake {
+
+    font-size: 85px;
+
+    animation: floating 3s ease-in-out infinite;
+
+}
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* Text */
+
+.small-title {
+
+    margin-top: 20px;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #ffc9da;
+
+}
+
+h1 {
+
+    margin-top: 15px;
+
+    font-size: clamp(48px, 10vw, 75px);
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+}
+
+h1 span {
+
+    font-family: 'Pacifico', cursive;
+
+    color: #ff9fc0;
+
+    text-shadow:
+        0 0 20px rgba(255, 159, 192, .4);
+
+}
+
+.description {
+
+    margin: 25px auto;
+
+    max-width: 390px;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+    color: #eee;
+
+}
+
+
+/* Button */
+
+.btn {
+
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg, #ff5f9e, #8c6cff);
+
+    box-shadow:
+        0 10px 30px rgba(255, 95, 158, .3);
+
+    transition: .3s;
+
+}
+
+.btn:hover {
+
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(255, 95, 158, .45);
+
+}
+
+.mini-text {
+
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    color: #bbb;
+
+}
+
+
+/* Balloons */
+
+.balloon {
+
+    position: fixed;
+
+    font-size: 70px;
+
+    z-index: 1;
+
+    animation: balloonMove 5s ease-in-out infinite;
+
+}
+
+.balloon-1 {
+
+    left: 5%;
+
+    top: 15%;
+
+}
+
+.balloon-2 {
+
+    right: 5%;
+
+    top: 20%;
+
+    animation-delay: 1s;
+
+}
+
+.balloon-3 {
+
+    left: 10%;
+
+    bottom: 10%;
+
+    animation-delay: 2s;
+
+}
+
+@keyframes balloonMove {
+
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(5deg);
+    }
+
+}
+
+
+/* Modal */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.65);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 10;
+
+}
+
+.modal.active {
+
+    display: flex;
+
+}
+
+
+/* Form */
+
+.form-card {
+
+    position: relative;
+
+    width: min(450px, 100%);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background: #fff;
+
+    color: #222;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.4);
+
+    animation: formAppear .35s ease;
+
+}
+
+@keyframes formAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.close-btn {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 15px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    color: #777;
+
+}
+
+.form-icon {
+
+    font-size: 45px;
+
+}
+
+.form-card h2 {
+
+    margin-top: 8px;
+
+    font-size: 28px;
+
+}
+
+.form-card > p {
+
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 13px;
+
+}
+
+
+/* Input */
+
+.input-group {
+
+    margin-top: 20px;
+
+    text-align: left;
+
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+.input-group input,
+.input-group textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    transition: .2s;
+
+}
+
+.input-group textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+
+    border-color: #ff6da6;
+
+    box-shadow:
+        0 0 0 3px rgba(255,109,166,.12);
+
+}
+
+
+/* Send Button */
+
+.send-btn {
+
+    width: 100%;
+
+    margin-top: 22px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(135deg, #ff5f9e, #8c6cff);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+.send-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Success */
+
+.success-message {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: #f5efff;
+
+    color: #6b42b8;
+
+    text-align: center;
+
+    font-weight: 600;
+
+}
+
+.success-message span {
+
+    font-size: 12px;
+
+    font-weight: 400;
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .birthday-card {
+
+        padding: 40px 25px;
+
+    }
+
+    .balloon {
+
+        font-size: 45px;
+
+    }
+
+    .balloon-1 {
+        left: 2%;
+    }
+
+    .balloon-2 {
+        right: 2%;
+    }
+
+    .form-card {
+
+        padding: 28px 22px;
+
+    }
+
+}
