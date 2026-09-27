@@ -12,9 +12,8 @@ body {
     overflow-x: hidden;
 
     background:
-        radial-gradient(circle at top left, #ff8fb1, transparent 35%),
-        radial-gradient(circle at bottom right, #7b61ff, transparent 35%),
-        linear-gradient(135deg, #17102d, #28154d, #121026);
+        linear-gradient(rgba(20, 10, 40, 0.55), rgba(20, 10, 40, 0.55)),
+        url("my\ foto.jpeg") center center / cover no-repeat fixed;
 
     color: white;
 }
@@ -79,16 +78,13 @@ body {
 
     text-align: center;
 
-    border-radius: 30px;
+    background: transparent;
 
-    background: rgba(255, 255, 255, 0.12);
+    border: none;
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: none;
 
-    backdrop-filter: blur(20px);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,0.35);
+    box-shadow:none;
 
     animation: cardAppear 1s ease;
 
